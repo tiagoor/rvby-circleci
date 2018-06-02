@@ -44,7 +44,7 @@ jobs:
       - run: sleep 10
 workflows:
   version: 2
-  bvilda_accept_deploia:
+  bvilda-testa-e-aprova-deploy:
     jobs:
       - bvilda
       - aceite_teste_1:
@@ -52,16 +52,11 @@ workflows:
             - bvilda
       - aceite_teste_2:
           requires:
-            - bvilda
-      - aceite_teste_3:
+            - aceite_teste_1
+      - hold:
+          type: approval
           requires:
-            - bvilda
-      - aceite_teste_5:
-          requires:
-            - bvilda            
+            - aceite_teste_2
       - deploia:
           requires:
-            - aceite_teste_5
-            - aceite_teste_1
-            - aceite_teste_2
-            - aceite_teste_3
+            - hold
