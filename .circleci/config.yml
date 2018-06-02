@@ -7,28 +7,28 @@ jobs:
       - checkout
       - run: echo "A echo rvby circleci docker image hello new rvby world!!"
       - run: sleep 2
-  acceptance_testa_1:
+  aceite_teste_1:
     docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
       - run: echo "A echo rvby circleci docker image hello new rvby world!!"
       - run: sleep 3
-  acceptance_testa_2:
+  aceite_teste_2:
     docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
       - run: echo "A echo rvby circleci docker image hello new rvby world!!"
       - run: sleep 3
-  acceptance_testa_3:
+  aceite_teste_3:
     docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
       - run: echo "A echo rvby circleci docker image hello new rvby world!!"
       - run: sleep 5
-  acceptance_testa_5:
+  aceite_teste_5:
     docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
       - image: circleci/ruby:2.4.1
     steps:
@@ -47,21 +47,21 @@ workflows:
   bvilda_accept_deploia:
     jobs:
       - bvilda
-      - acceptance_testa_1:
+      - aceite_teste_1:
           requires:
             - bvilda
-      - acceptance_testa_2:
+      - aceite_teste_2:
           requires:
             - bvilda
-      - acceptance_testa_3:
+      - aceite_teste_3:
           requires:
             - bvilda
-      - acceptance_testa_5:
+      - aceite_teste_5:
           requires:
             - bvilda            
       - deploia:
           requires:
-            - acceptance_testa_5
-            - acceptance_testa_1
-            - acceptance_testa_2
-            - acceptance_testa_3
+            - aceite_teste_5
+            - aceite_teste_1
+            - aceite_teste_2
+            - aceite_teste_3
