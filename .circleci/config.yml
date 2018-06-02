@@ -8,7 +8,7 @@ jobs:
     working_directory: ~/circleci-demo-workflows
     steps:
       - checkout
-      # Bundle install dependencies
+      # Bundle install dependencies 2
       - run: bundle install --path vendor/bundle
 
       # Database setup
