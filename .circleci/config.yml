@@ -39,6 +39,6 @@ workflows:
       - testa1:
           requires:
             - testa1
-      - deploia
+      - deploia:
           requires:
             - testa2
