@@ -39,7 +39,7 @@ workflows:
   version: 2
   bvilda-testa-e-aprova-deploy:
     jobs:
-      - request-testing:
+      - request-teng:
         type: approval
         requires:
           - bvilda
