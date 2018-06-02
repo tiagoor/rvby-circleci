@@ -39,10 +39,7 @@ workflows:
   version: 2
   bvilda-testa-e-aprova-deploy:
     jobs:
-      - request-teng:
-        type: approval
-        requires:
-          - bvilda
+      - bvilda
       - aceite_teste_1:
           requires:
             - bvilda
