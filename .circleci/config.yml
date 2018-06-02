@@ -37,19 +37,19 @@ jobs:
       - run: sleep 10
 workflows:
   version: 2
-  bvilda-testa-e-aprova-deploy:
+  dev_stage_pre-prod:
     jobs:
-      - bvilda
-      - aceite_teste_1
-          requires:
-            - bvilda
-      - aceite_teste_2:
-          requires:
-            - aceite_teste_1
-      - hold:
-          type: approval
-          requires:
-            - aceite_teste_2
-      - deploia:
-          requires:
-            - hold
+      - test_dev:
+          filters:
+            branches:
+              only:
+                - dev
+                - /user-.*/
+      - test_stage:
+          filters:
+            branches:
+              only: stage
+      - test_pre-prod:
+          filters:
+            branches:
+              only: /pre-prod(?:-.+)?$/
