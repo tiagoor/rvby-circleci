@@ -55,7 +55,6 @@ workflows:
     jobs:
       - bvilda
       - aceite_teste_1
-          type: request-testing
           requires:
             - bvilda
       - aceite_teste_2:
