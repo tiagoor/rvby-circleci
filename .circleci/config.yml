@@ -19,5 +19,12 @@ workflows:
   bvilda-testa-e-deploia:
     jobs:
       - bvilda
-      - testa
+      - testa1:
+          requires:
+            - builda
+      - testa1:
+          requires:
+            - testa1
       - deploia
+          requires:
+            - testa2
