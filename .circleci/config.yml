@@ -6,39 +6,64 @@ jobs:
     steps:
       - checkout
       - run: echo "A echo rvby circleci docker image hello new rvby world!!"
-      - run: sleep 22
-  testa1:
+      - run: sleep 2
+  aceite_teste_1:
+    docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
+      - image: circleci/ruby:2.4.1
+    steps:
+      - checkout
+      - run: echo "A echo rvby circleci docker image hello new rvby !!"
+      - run: sleep 3
+  aceite_teste_2:
     docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
       - run: echo "A echo rvby circleci docker image hello new rvby world!!"
-      - run: sleep 10
-  testa2:
+      - run: sleep 3
+  aceite_teste_3:
     docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
       - run: echo "A echo rvby circleci docker image hello new rvby world!!"
-      - run: sleep 10
+      - run: sleep 5
+  teste_1:
+    docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
+      - image: circleci/ruby:2.4.1
+    steps:
+      - checkout
+      - run: echo "A echo rvby circleci docker image hello new rvby world!!"
+      - run: sleep 1
+  teste_2:
+    docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
+      - image: circleci/ruby:2.4.1
+    steps:
+      - checkout
+      - run: echo "A echo rvby circleci docker image hello new rvby world!!"
+      - run: sleep 2      
   deploia:
     docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
-      - run: echo "A echo rvby circleci docker image hello new rvby world!!"
+      - run: echo "Deploy"
       - run: sleep 10
 workflows:
   version: 2
-  bvilda-testa-e-deploia:
+  bvilda-testa-e-aprova-deploy:
     jobs:
       - bvilda
-      - testa1:
+      - aceite_teste_1
           requires:
             - bvilda
-      - testa2:
+      - aceite_teste_2:
           requires:
-            - testa1
+            - aceite_teste_1
+      - hold:
+          type: approval
+          requires:
+            - aceite_teste_2
       - deploia:
           requires:
-            - testa2
+            - hold
