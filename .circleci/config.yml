@@ -54,10 +54,10 @@ workflows:
   bvilda-testa-e-aprova-deploy:
     jobs:
       - bvilda
-      - teste_1:
+      - aceite_teste_1:
           requires:
             - bvilda
-      - teste_2:
+      - aceite_teste_2:
           requires:
             - aceite_teste_1
       - hold:
