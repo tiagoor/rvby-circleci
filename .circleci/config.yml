@@ -50,13 +50,13 @@ workflows:
       - acceptance_teste_1:
           requires:
             - bvilda
-      - acceptance_testa2:
+      - acceptance_testa_2:
           requires:
             - bvilda
-      - acceptance_testa3:
+      - acceptance_testa_3:
           requires:
             - bvilda
-      - acceptance_testa5:
+      - acceptance_testa_5:
           requires:
             - bvilda            
       - deploia:
