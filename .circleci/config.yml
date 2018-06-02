@@ -59,7 +59,7 @@ workflows:
             - bvilda
       - aceite_teste_2:
           requires:
-            - teste_1
+            - aceite_teste_1
       - hold:
           type: approval
           requires:
