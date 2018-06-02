@@ -26,7 +26,7 @@ jobs:
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
-      - run: echo "A echo rvby circleci docker image hello new rvby world!!"
+      - run: echo "A echo rvby circleci docker !!"
       - run: sleep 5
   deploia:
     docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
