@@ -7,26 +7,40 @@ jobs:
       - checkout
       - run: echo "A echo rvby circleci docker image hello new rvby world!!"
       - run: sleep 22
-  testa1:
+  acceptance_teste_1:
     docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
       - run: echo "A echo rvby circleci docker image hello new rvby world!!"
-      - run: sleep 10
-  testa2:
+      - run: sleep 2
+  acceptance_teste_2:
     docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
       - run: echo "A echo rvby circleci docker image hello new rvby world!!"
-      - run: sleep 10
+      - run: sleep 3
+  acceptance_teste_3:
+    docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
+      - image: circleci/ruby:2.4.1
+    steps:
+      - checkout
+      - run: echo "A echo rvby circleci docker image hello new rvby world!!"
+      - run: sleep 5
+  acceptance_teste_5:
+    docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
+      - image: circleci/ruby:2.4.1
+    steps:
+      - checkout
+      - run: echo "A echo rvby circleci docker image hello new rvby world!!"
+      - run: sleep 8
   deploia:
     docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
-      - run: echo "A echo rvby circleci docker image hello new rvby world!!"
+      - run: echo "Deploy"
       - run: sleep 10
 workflows:
   version: 2
