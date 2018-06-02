@@ -30,15 +30,24 @@ jobs:
       - run: sleep 10
 workflows:
   version: 2
-  bvilda-testa-e-deploia:
+  bvilda-accept-deploia:
     jobs:
       - bvilda
-      - testa1:
+      - acceptance_teste_1:
           requires:
             - bvilda
-      - testa2:
+      - acceptance_testa2:
           requires:
-            - testa1
+            - bvilda
+      - acceptance_testa3:
+          requires:
+            - bvilda
+      - acceptance_testa5:
+          requires:
+            - bvilda            
       - deploia:
           requires:
-            - testa2
+            - acceptance_testa5
+            - acceptance_testa1
+            - acceptance_testa2
+            - acceptance_testa3
