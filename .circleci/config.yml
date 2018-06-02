@@ -5,4 +5,4 @@ jobs:
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
-      - run: echo "A echo rvby circleci docker image hello new rvby world!!"
+      - run: echo error "A echo rvby circleci docker image hello new rvby world!!"
