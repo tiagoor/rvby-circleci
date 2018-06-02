@@ -39,7 +39,10 @@ workflows:
   version: 2
   bvilda-testa-e-aprova-deploy:
     jobs:
-      - bvilda
+      - request-testing:
+        type: approval
+        requires:
+          - bvilda
       - aceite_teste_1:
           requires:
             - bvilda
