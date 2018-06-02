@@ -54,8 +54,7 @@ workflows:
   bvilda-testa-e-aprova-deploy:
     jobs:
       - bvilda
-      - aceite_teste_1:
-          type: request-testing
+      - request-testing:
           requires:
             - bvilda
       - aceite_teste_2:
